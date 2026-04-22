@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mill River Visual Analytics</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Project header -->
+    <header class="project-header">
+      <div class="project-header-inner">
+        <div class="project-title-block">
+          <h1>Mill River Visual Analytics</h1>
+          <p class="project-subtitle">Paradise Pond · Smith College · Northampton, MA</p>
+        </div>
+        <div class="project-badge">2019 – 2024</div>
+      </div>
+    </header>
+
+    <!-- Project description -->
+    <section class="project-description">
+      <p>
+        This system supports the long-term monitoring of the Mill River upstream and downstream
+        of Paradise Pond. The data tracks macroinvertebrate communities — small aquatic organisms
+        that serve as biological indicators of river health — collected each summer and fall from
+        2019 to 2024. The goal is to help researchers understand how environmental changes such
+        as conductivity from road salt, water temperature, and stream discharge affect which
+        organisms are present and in what densities.
+      </p>
+      <div class="project-meta">
+        <span> Researcher: Marney Pratt, Biology Dept.</span>
+        <span> Locations: Upstream &amp; Downstream</span>
+        <span> Seasons: Summer &amp; Fall</span>
+        <span> 238 species · 84 families</span>
+      </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="hli-nav">
+      <button class="nav-btn active" onclick="showSection('hli1', this)">
+        <span class="nav-label">Communities Across Years</span>
+      </button>
+      <button class="nav-btn" onclick="showSection('hli2', this)">
+        <span class="nav-label">Environmental Effects</span>
+      </button>
+      <button class="nav-btn" onclick="showSection('hli3', this)">
+        <span class="nav-label">Anomalous Organisms</span>
+      </button>
+    </nav>
+
+    <!-- HLI-1: Communities across years -->
+    <section id="hli1" class="hli-section">
+      <div class="hli-section-header">
+        <h2> Macroinvertebrate Communities Across Years</h2>
+        <p>Understand how organism communities change over time upstream and downstream.</p>
+      </div>
+      <div class="placeholder">
+        <div class="placeholder-icon"> </div>
+        <div class="placeholder-title">Scatter plot coming soon</div>
+        <div class="placeholder-text">
+          This view will show organism density vs. conductivity, colored by taxonomic family
+          or functional feeding group, with year and season filters.
+        </div>
+      </div>
+    </section>
+
+    <!-- HLI-2: Environmental effects -->
+    <section id="hli2" class="hli-section hidden-section">
+      <div class="hli-section-header">
+        <h2>Effects of Environmental Variables</h2>
+        <p>Identify how specific environmental variables drive macroinvertebrate density.</p>
+      </div>
+      <div class="placeholder">
+        <div class="placeholder-icon"> </div>
+        <div class="placeholder-title">Variable explorer coming soon</div>
+        <div class="placeholder-text">
+          This view will let you select an environmental variable from a dropdown
+          (conductivity, flow, dissolved oxygen, etc.) and see its effect on
+          organism density across upstream and downstream locations.
+        </div>
+      </div>
+    </section>
+
+    <!-- HLI-3: Anomalous organisms -->
+    <section id="hli3" class="hli-section hidden-section">
+
+      <div class="hli-section-header">
+        <h2> Anomalous Organisms</h2>
+        <p>Find organisms responding unusually to environmental conditions. Click any anomalous colored cell to see details on the right.</p>
+      </div>
+
+      <div class="controls">
+        <label>
+          <input type="checkbox" id="anomaliesOnly" />
+          <span>Show anomalies only (|r| &gt; 0.3)</span>
+        </label>
+      </div>
+
+      <!-- Side by side layout -->
+      <div class="hli3-layout">
+
+        <!-- LEFT: correlation matrix -->
+        <div class="matrix-panel">
+          <div id="heatmap">Loading...</div>
+        </div>
+
+        <!-- RIGHT: scatter plot detail -->
+        <div class="detail-panel" id="detailPanel">
+          <div class="detail-empty" id="detailEmpty">
+            <div class="detail-empty-icon"> </div>
+            <div>Click any anomalouscolored cell in the matrix to see the scatter plot here</div>
+          </div>
+          <div class="detail-content hidden" id="detailContent">
+            <h3 id="detailTitle"></h3>
+            <p id="detailR"></p>
+            <p id="detailStrength"></p>
+            <canvas id="scatterPlot" width="400" height="300"></canvas>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div><!-- /.container -->
+
+  <script src="script.js"></script>
+</body>
+</html>

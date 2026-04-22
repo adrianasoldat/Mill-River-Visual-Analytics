@@ -1,0 +1,304 @@
+/* ── Reset ── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Georgia, serif;
+  background: #f4f1eb;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ── Container ── */
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  overflow: hidden;
+}
+
+/* ── Project header ── */
+.project-header {
+  background: #1c1a16;
+  color: white;
+  padding: 28px 40px;
+}
+.project-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.project-header h1 {
+  font-size: 1.7em;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.project-subtitle {
+  font-size: 0.85em;
+  opacity: 0.5;
+  font-style: italic;
+}
+.project-badge {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #aaa;
+  padding: 6px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+/* ── Project description ── */
+.project-description {
+  padding: 28px 40px;
+  background: #fdfcf8;
+  border-bottom: 1px solid #e8e4dc;
+}
+.project-description p {
+  font-size: 0.97em;
+  line-height: 1.75;
+  color: #444;
+  max-width: 820px;
+  margin-bottom: 16px;
+}
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.project-meta span {
+  font-size: 12px;
+  font-family: 'Courier New', monospace;
+  color: #777;
+  background: #f0ece3;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* ── HLI Navigation ── */
+.hli-nav {
+  display: flex;
+  border-bottom: 2px solid #e8e4dc;
+  background: #f8f8f6;
+}
+.nav-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 20px;
+  border: none;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  gap: 3px;
+  margin-bottom: -2px;
+}
+.nav-btn:hover { background: #f0ece3; }
+
+.nav-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* ── HLI Sections ── */
+.hli-section { padding: 32px 40px; }
+.hidden-section { display: none; }
+.hli-section-header { margin-bottom: 20px; }
+.hli-section-header h2 {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #1c1a16;
+  margin-bottom: 4px;
+}
+.hli-section-header p {
+  font-size: 0.9em;
+  color: #777;
+  font-style: italic;
+}
+
+/* ── Placeholders ── */
+.placeholder {
+  border: 2px dashed #d8d2c8;
+  border-radius: 10px;
+  padding: 60px 40px;
+  text-align: center;
+  background: #fdfcf8;
+}
+.placeholder-icon { font-size: 2.5em; margin-bottom: 12px; }
+.placeholder-title {
+  font-size: 1em;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 8px;
+}
+.placeholder-text {
+  font-size: 0.88em;
+  color: #999;
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* ── Controls ── */
+.controls {
+  padding: 16px 0;
+  margin-bottom: 16px;
+}
+.controls label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1em;
+  gap: 10px;
+  user-select: none;
+}
+.controls input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #3d6b4f;
+}
+
+/* ── HLI-3 Side-by-side layout ── */
+.hli3-layout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* LEFT panel — matrix */
+.matrix-panel {
+  flex: 2;
+  overflow-x: auto;
+  min-width: 0;
+}
+
+/* RIGHT panel — scatter detail */
+.detail-panel {
+  flex: 1;
+  min-width: 280px;
+  background: #fdfcf8;
+  border: 1px solid #e8e4dc;
+  border-radius: 10px;
+  padding: 24px;
+  position: sticky;
+  top: 20px;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Empty state — before any cell is clicked */
+.detail-empty {
+  text-align: center;
+  color: #bbb;
+  font-size: 0.88em;
+  font-style: italic;
+  line-height: 1.6;
+}
+.detail-empty-icon {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+/* Filled state — after a cell is clicked */
+.detail-content {
+  width: 100%;
+}
+.detail-content h3 {
+  font-size: 1em;
+  font-weight: 600;
+  color: #1c1a16;
+  margin-bottom: 6px;
+}
+.detail-content p {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85em;
+  color: #555;
+  margin-bottom: 4px;
+}
+.detail-content canvas {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  border-radius: 6px;
+}
+
+.hidden { display: none; }
+
+/* ── Heatmap table ── */
+.heatmap-table {
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.heatmap-table thead th {
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.col-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  color: #555;
+  padding: 4px 6px 8px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  height: 80px;
+  vertical-align: bottom;
+  min-width: 58px;
+}
+.row-label {
+  font-size: 12px;
+  font-style: italic;
+  color: #333;
+  text-align: right;
+  padding: 6px 12px 6px 0;
+  white-space: nowrap;
+  min-width: 160px;
+}
+.heatmap-cell {
+  width: 58px;
+  height: 38px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 3px;
+  font-size: 11px;
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  padding: 2px;
+  transition: transform 0.15s, box-shadow 0.15s;
+  user-select: none;
+}
+.heatmap-cell.clickable {
+  cursor: pointer;
+}
+.heatmap-cell.clickable:hover {
+  transform: scale(1.1);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.20);
+  z-index: 1;
+  position: relative;
+}
+.heatmap-cell.na-cell {
+  background: #f0ece3;
+  color: #bbb;
+  font-size: 10px;
+  cursor: default;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .hli3-layout { flex-direction: column; }
+  .detail-panel { position: static; min-width: unset; width: 100%; }
+  .hli-section { padding: 20px; }
+  .project-header, .project-description { padding: 20px; }
+}
