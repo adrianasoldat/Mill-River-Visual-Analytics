@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="styles.css" />
   <script src="d3.v7.min.js"></script>
 </head>
+
 <body>
 
   <div class="container">
@@ -72,18 +74,56 @@
 
     <!-- HLI-2: Environmental effects -->
     <section id="hli2" class="hli-section hidden-section">
+
+
+      <!-- Header -->
       <div class="hli-section-header">
         <h2>Effects of Environmental Variables</h2>
         <p>Identify how specific environmental variables drive macroinvertebrate density.</p>
       </div>
-      <div class="placeholder">
-        <div class="placeholder-icon"> </div>
-        <div class="placeholder-title">Variable explorer coming soon</div>
-        <div class="placeholder-text">
-          This view will let you select an environmental variable from a dropdown
-          (conductivity, flow, dissolved oxygen, etc.) and see its effect on
-          organism density across upstream and downstream locations.
+
+      <!-- Layout: Left side controls, Right Side scatter plots, use for flexbox setups etc -->
+      <div class="hli2_layout">
+        <!-- Control Panel -->
+        <div class="control_panel">
+          <div class="placeholder-title">Enviromental Variables</div>
+          <select id="EnvDropdown">
+            <option value="Select" selected>Select</option>
+            <option value="Conductivity">Conductivity</option>
+            <option value="Precipitation">Precipitation</option>
+            <option value="Dissolved Oxygen">Dissolved Oxygen</option>
+          </select>
+          <div class="placeholder-title">Functional Groups</div>
+          <select id="FunctDropdown">
+            <option value="Select" selected>Select</option>
+            <option value="All">All Groups</option>
+            <option value="Collector-gatherer">Collector-gatherer</option>
+            <option value="Filterer">Filterer</option>
+            <option value="Predator">Predator</option>
+            <option value="Scraper">Scraper</option>
+            <option value="Shredder">Shredder</option>
+          </select>
         </div>
+        <!-- ScatterPlot Panel -->
+        <div class="scatterPlot_panel">
+          <!-- Legend -->
+          <div id="hli2Legend">
+            <span><span class="legend-dot Type1"></span> Type1</span>
+            <span><span class="legend-dot Type2"></span> Type2</span>
+            <span><span class="legend-dot Type3"></span> Type3</span>
+          </div>
+
+          <!-- Plots  -->
+          <div id="hli2ScatterWrapper">
+            <div class="plot-box">
+              <h3 class="plot-title">Upstream</h3>
+            </div>
+            <div class="plot-box">
+              <h3 class="plot-title">Downstream</h3>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -92,7 +132,8 @@
 
       <div class="hli-section-header">
         <h2> Anomalous Organisms</h2>
-        <p>Find organisms responding unusually to environmental conditions. Click any anomalous colored cell to see details on the right.</p>
+        <p>Find organisms responding unusually to environmental conditions. Click any anomalous colored cell to see
+          details on the right.</p>
       </div>
 
       <div class="controls">
@@ -131,4 +172,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
