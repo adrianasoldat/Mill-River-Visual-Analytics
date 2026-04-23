@@ -265,6 +265,7 @@ body {
   flex-shrink: 0;
 }
 
+/* still have to see what each color mean */
 .legend-dot.Type1 {
   background: #b10026;
 }
@@ -277,7 +278,12 @@ body {
   background: #fee08b;
 }
 
-
+#hli2ScatterPlot1,
+#hli2ScatterPlot2 {
+  width: 100%;
+  height: 300px;
+  display: block;
+}
 /* Controls HLI2 */
 .control_panel {
   display: flex;

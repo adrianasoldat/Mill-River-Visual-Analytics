@@ -89,9 +89,12 @@
           <div class="placeholder-title">Enviromental Variables</div>
           <select id="EnvDropdown">
             <option value="Select" selected>Select</option>
-            <option value="Conductivity">Conductivity</option>
-            <option value="Precipitation">Precipitation</option>
-            <option value="Dissolved Oxygen">Dissolved Oxygen</option>
+            <option value="cond">Conductivity</option>
+            <option value="flow">Water Flow</option>
+            <option value="DO">Dissolved Oxygen</option>
+            <option value="waterTemp">Water Temperature</option>
+            <option value="precip">Precipitation</option>
+            <option value="discharge">Stream Discharge</option>
           </select>
           <div class="placeholder-title">Functional Groups</div>
           <select id="FunctDropdown">
@@ -117,9 +120,12 @@
           <div id="hli2ScatterWrapper">
             <div class="plot-box">
               <h3 class="plot-title">Upstream</h3>
+              <svg id="hli2ScatterPlot1"></svg>
             </div>
+
             <div class="plot-box">
               <h3 class="plot-title">Downstream</h3>
+              <svg id="hli2ScatterPlot2"></svg>
             </div>
           </div>
         </div>
