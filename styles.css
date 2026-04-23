@@ -302,3 +302,10 @@ body {
   .hli-section { padding: 20px; }
   .project-header, .project-description { padding: 20px; }
 }
+
+
+.highlight {
+   stroke: #ff0000; 
+     stroke-width: 2px;
+}
+
